@@ -1,0 +1,1 @@
+import maya.cmds as cmds; cmds.camera(); cmds.rename('camera1', 'DroneCam')

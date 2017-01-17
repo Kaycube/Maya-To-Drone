@@ -1,0 +1,115 @@
+global proc shelf_Drone () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import maya.cmds as cmds; cmds.camera(); cmds.rename('camera1', 'DroneCam')" 
+        -enableBackground 0
+        -align "center" 
+        -label "Camera" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Camera" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "/home/r2d2/maya/2015-x64/DroneStuff/Icons/cameraIcon.png" 
+        -image1 "/home/r2d2/maya/2015-x64/DroneStuff/Icons/cameraIcon.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import maya.cmds as cmds; cmds.camera(); cmds.rename('camera1', 'DroneCam')" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import os; os.system('gnome-terminal');" 
+        -enableBackground 0
+        -align "center" 
+        -label "Cmd" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Cmd" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.25 
+        -image "/home/r2d2/maya/2015-x64/DroneStuff/Icons/cmdIcon.png" 
+        -image1 "/home/r2d2/maya/2015-x64/DroneStuff/Icons/cmdIcon.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import os; os.system('gnome-terminal');" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 0
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import MayaPortCommands; reload(MayaPortCommands); MayaPortCommands.MayaPortCommands();" 
+        -enableBackground 0
+        -align "center" 
+        -label "Port" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -imageOverlayLabel "Port" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "/home/r2d2/maya/2015-x64/DroneStuff/Icons/port.png" 
+        -image1 "/home/r2d2/maya/2015-x64/DroneStuff/Icons/port.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import MayaPortCommands; reload(MayaPortCommands);" 
+        -sourceType "python" 
+        -commandRepeatable 0
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "import MayaToDroneControl\nreload(MayaToDroneControl)" 
+        -enableBackground 0
+        -align "center" 
+        -label "Drone" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "pythonFamily.png" 
+        -image1 "pythonFamily.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import MayaToDroneControl; reload(MayaToDroneControl)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+
+} 

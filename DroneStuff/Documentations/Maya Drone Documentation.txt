@@ -1,0 +1,103 @@
+﻿NOTES FOR MAYA / DRONE
+
+##############UPDATE:
+-open Maya
+-Load Drone PlugIn in the plug-in manager
+
+Checklist of stuff :
+
+--- make MayaPortCommands.py a plug-in for Maya with a shelf object to import a drone camera rig
+- create animation script for creating keyframes from the drone
+- make drone leap motion, open cv and/or voice controlled
+- possibly explore Augumented Reality visualization from the drone camera from Maya's viewport
+- shelf object to launch drone in Maya
+- prevent code from ending connection before all data is recieved
+
+FUTURE: MAKE MOCAP DRONES
+
+
+
+
+IMPORTANT: Computer should be connected to drone when running these processes. Example ardrone #####
+
+#### installed python libraries ####
+python 2.7
+pygame
+open cv2
+matplotlib
+pip2
+wheel
+speechrecognition
+numpy
+pyaudio
+pocketsphinx
+sphinxbase
+
+Important folders in maya/'maya_version':
+
+Configs(contains xml file and DroneMaya Project folder)
+Plugin(contains Drone Plugin python script)
+Scripts(Contains scripts for the drone)
+Icons(contains  icons for the maya shelf)
+
+Important files/python scripts needed:
+
+Maya 2015 installed
+
+DroneMayaCamControl.py
+JoyStickController.py
+MathFunc.py
+MayaPortCommands.py
+ps_drone.py
+Drone PlugIn.py
+dynamicShelfConf.xml
+shelf_DroneShelf.mel (/home/wall-e/maya/2015-x64/prefs/shelves)
+MayaToDroneFileExport.py
+ReadJsonFile.py
+
+
+#############Maya.env file Paths:
+MAYA_PLUG_IN_PATH = /home/wall-e/maya/2015-x64/DroneStuff/Plugin
+ICONS_PATH = /home/wall-e/maya/2015-x64/DroneStuff/Icons
+SCRIPTS_PATH = /home/wall-e/maya/2015-x64/DroneStuff/Scripts
+CONFIGS_PATH = /home/wall-e/maya/2015-x64/DroneStuff/Configs
+PRJ_NAME = DroneMaya
+
+
+
+##############Important variables:
+
+Host IP : “127.0.0.1” or “127.0.1.1”(Virtual box) or localhost
+Open Port number: 631 (currently used port); can be any listening port 
+
+
+
+Process to run Code on Ubuntu 14.04 Virtual box with shared folders:
+
+- open two terminal windows
+- run “sudo -i” in terminal 1
+- type password
+- press enter
+- type “nautilus”
+- press enter
+
+- copy files from sf_PycharmProjects to /home/wall-e/maya/2015-x64/scripts
+- close window
+- in terminal 1, type “exit”
+- press enter
+
+- in terminal 1 type “sudo maya” (this opens the currently installed version of Maya)
+- press enter
+IMPORTANT : After Maya loads, go to settings and preferences, under Applications, disable Default command port
+- create a camera and rename it from “camera1” to “camera”
+IMPORTANT : Make sure the camera is the selected object for the next steps
+- open Maya Script editor and load MayaPortCommands.py
+- run script
+IMPORTANT: Read the error messages in the script editor and debug accordingly
+- in terminal 2, type “cd /home/wall-e/maya/2015-x64/scripts”
+- press enter
+Keep terminal 2 ON TOP of open applications (hopefully its maya so you can see whats going on)
+- in terminal 2 type “sudo python DroneMayaCamControl.py”
+IMPORTANT: read the error messages in the terminal and debug accordingly
+
+ALL SET>>> the camera should rename to DroneCam and move according to data received from DroneMayaCamControl 

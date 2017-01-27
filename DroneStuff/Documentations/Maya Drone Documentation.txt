@@ -32,6 +32,7 @@ numpy
 pyaudio
 pocketsphinx
 sphinxbase
+tkinter
 
 Important folders in maya/'maya_version':
 

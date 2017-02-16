@@ -1,0 +1,23 @@
+{
+  "name": "ardrone",
+  "version": "1.0.0",
+  "description": "mm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ar-drone": "^0.3.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixge/node-ar-drone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/felixge/node-ar-drone/issues"
+  },
+  "homepage": "https://github.com/felixge/node-ar-drone#readme"
+}

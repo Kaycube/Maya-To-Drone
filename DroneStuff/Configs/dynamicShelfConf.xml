@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<DroneShelf>
-    <shelfItem icon="cameraIcon.xmp" cmds="import maya.cmds as cmds; cmds.camera(); cmds.rename('camera1', 'DroneCam')" ann="Create a camera and rename it"/>
-    <shelfItem icon="cmdIcon.xmp" cmds="import os; os.system('gnome-terminal')" ann="Open terminal and run DroneMayaCamControl.py"/>
-    <shelfItem icon="port.xmp" cmds="import MayaPortCommands; reload(MayaPortCommands); MayaPortCommands.MayaPortCommands();" ann="Open local Maya Port"/>
-</DroneShelf>

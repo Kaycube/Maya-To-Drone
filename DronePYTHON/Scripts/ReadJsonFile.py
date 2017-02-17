@@ -19,13 +19,14 @@ def MaxValue2DList(List):
 
 
 def DroneData():
-    global currentHeight
+    #global currentHeight
     end = False
     NDC = drone.NavDataCount
     while not end:
         while drone.NavDataCount == NDC:
             time.sleep(0.001)
         currentHeight = drone.NavData["demo"][3]
+        print currentHeight
 
 
 def Camera(fileName):
@@ -111,10 +112,12 @@ def MoveDrone(rz, rx, ty, ry):
     drone.move(rz, rx, ty, ry)
 
 if __name__ == "__main__":
-    file = tk.askopenfilename()
-    p1 = Thread(target=Camera(Camera(file)))
-    p2 = Thread(target=DroneData)
-    p1.start()
-    p2.daemon = True
-    p2.start()
-    p1.join()
+    Initialize()
+    #file = tk.askopenfilename()
+    #p1 = Thread(target=Camera(Camera(file)))
+    #p2 = Thread(target=DroneData)
+    #p1.start()
+    #p2.daemon = True
+    #p2.start()
+    #p1.join
+    DroneData()

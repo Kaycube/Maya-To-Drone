@@ -16,7 +16,7 @@ def DroneData():
     while not end:
         while drone.NavDataCount == NDC:
             time.sleep(0.001)
-        #currentHeight = drone.NavData["demo"][3]
+        currentHeight = drone.NavData["demo"][3]
         #print currentHeight
 
 def Initialize():
